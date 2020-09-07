@@ -25,8 +25,13 @@
 </label>
 <input type="radio" name="r3" value="mul" />multiply 
 <br />
+      
 </label>
- 
+ </label>
+<input type="radio" name="r4" value="div" />division 
+<br />
+</label>
+
 </div>
 <input type="submit" value="submit" />
 </form>
