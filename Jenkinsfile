@@ -1,6 +1,10 @@
 pipeline {
     agent any
+	environment {
 
+	SERVER_CREDENTIALS = credentails('QA-TOMCAT-ID')
+		
+	}
     stages {
         stage('Build') {
             steps {
