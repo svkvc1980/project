@@ -1,10 +1,13 @@
 pipeline {
     agent any
-	environment {
+	
+	/*environment {
 
 	SERVER_CREDENTIALS = credentails('QA-TOMCAT-ID')
 		
 	}
+	*/
+	
     stages {
         stage('Build') {
             steps {
@@ -22,12 +25,15 @@ pipeline {
             steps {
                 echo '...........Deploying the WebCalculator Application to QA TOMCAT Server.................'
                 // sh 'curl -s --upload-file target/*.war "http://qadeploy:qadeploy@3.128.76.233:9090/manager/text/deploy?path=/appwebcalculator&update=true"'
+	sh 'curl -s --upload-file target/*.war "http://qadeploy:qadeploy@3.128.76.233:9090/manager/text/deploy?path=/appwebcalculator&update=true"'
                 
-                withCredentails([
+               /* withCredentails([
 					usernamePassword(credentials: ‘QA-TOMCAT-ID’, usernameVariable: USER, passwordVariable: PWD)
 				    ])
 
                 sh ' curl -s --upload-file target/*.war "http://"$USER":"$PWD"@3.128.76.233:9090/manager/text/deploy?path=/myapp&update=true" '
+		
+		*/
             }
         }
     }
