@@ -23,7 +23,7 @@ pipeline {
 					usernamePassword(credentials: ‘QA-TOMCAT-ID’, usernameVariable: QATOMCATUSER, passwordVariable: QATOMCATPWD)
 				    ])
 
-                sh ' curl -s --upload-file target/*.war "http://$QATOMCATUSER:$QATOMCATPWD@3.128.76.233:9090/manager/text/deploy?path=/myapp&update=true" '
+                sh ' curl -s --upload-file target/*.war "http://"$QATOMCATUSER":"$QATOMCATPWD"@3.128.76.233:9090/manager/text/deploy?path=/myapp&update=true" '
             }
         }
     }
