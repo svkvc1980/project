@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo '...........Deploying the WebCalculator Application to QA TOMCAT Server.................'
                 
-		sh 'curl -s --upload-file target/*.war "http://qadeploy:qadeploy@3.129.11.26:8080/manager/text/deploy?path=/app&update=true"'
+		sh 'curl -s --upload-file target/*.war "http://qadeploy:qadeploy@3.129.11.26:8080/manager/text/deploy?path=/jlapp&update=true"'
                 //sh 'curl -s --upload-file target/*.war "http://deployprod:deployprod@3.21.162.222:8080/manager/text/deploy?path=/dummy&update=true"'
                
             }
